@@ -1,0 +1,21 @@
+# Netlify configuration — Cason's Printz
+# This is a plain static site (no build step). Netlify just serves the files.
+
+[build]
+  # No build command needed — files are served as-is from the repo root.
+  publish = "."
+  command = ""
+
+# Sensible security headers for a static shop site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Always serve the freshest product data.
+[[headers]]
+  for = "/products.json"
+  [headers.values]
+    Cache-Control = "no-cache"

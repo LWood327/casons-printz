@@ -32,16 +32,17 @@ python -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-## Editing the shop
-See `EDITING_GUIDE.md` (added in Stage 8) for plain-English instructions on
-adding products, swapping images, and changing prices/text.
+## Guides
+- **`EDITING_GUIDE.md`** — plain-English: add products, swap images, change text/prices
+- **`STRIPE_SETUP.md`** — create Stripe Payment Links and connect payments
+- **`DEPLOY.md`** — push to GitHub + connect Netlify (one-time)
 
 ## Build stages
 1. Scaffold ✅
-2. Style pass
-3. Product grids
-4. Product detail pages
-5. Stripe integration
-6. Footer + polish
-7. Netlify deploy
-8. EDITING_GUIDE.md
+2. Style pass ✅
+3. Product grids ✅
+4. Product detail pages ✅
+5. Stripe integration ✅ (code done; owner adds Payment Links — see STRIPE_SETUP.md)
+6. Footer + polish ✅
+7. Netlify deploy — ready; owner connects accounts (see DEPLOY.md)
+8. EDITING_GUIDE.md ✅
