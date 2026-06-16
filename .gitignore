@@ -1,0 +1,19 @@
+# Environment / secrets — NEVER commit real Stripe keys
+.env
+.env.local
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Netlify
+.netlify/

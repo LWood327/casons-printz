@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Cason's Printz — Base Styles
+   Stage 1: design tokens / CSS variables only.
+   Full layout & component styling lands in Stage 2 (style pass).
+   ========================================================================== */
+
+:root {
+  /* --- Color palette --- */
+  --color-bg: #000000;          /* near-black background */
+  --color-surface: #0d0d0f;     /* slightly lifted panels / cards */
+  --color-surface-2: #161619;   /* hover / elevated surface */
+  --color-text: #ffffff;        /* primary text */
+  --color-text-muted: #b3b3b8;  /* secondary text */
+  --color-accent: #ff6eb4;      /* cherry blossom pink */
+  --color-accent-soft: #ff9ccb; /* lighter pink for hovers/highlights */
+  --color-border: #26262b;      /* subtle dividers / card borders */
+
+  /* --- Typography --- */
+  --font-heading: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* --- Spacing / layout --- */
+  --max-width: 1200px;
+  --gap: 1.5rem;
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  /* --- Effects --- */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  --glow: 0 0 0 1px rgba(255, 110, 180, 0.35), 0 0 24px rgba(255, 110, 180, 0.25);
+  --transition: 180ms ease;
+}
+
+/* --- Reset / base (minimal for Stage 1) --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
