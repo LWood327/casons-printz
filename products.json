@@ -8,7 +8,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Sakura+Drip+Tee",
       "type": "premade",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_9B600j70jfFq3dE91e6EU00"
     },
     {
       "id": "premade-2",
@@ -18,7 +18,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Neon+Tokyo+Hoodie",
       "type": "premade",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_fZucN5ckD3WIbKaa5i6EU01"
     },
     {
       "id": "premade-3",
@@ -28,7 +28,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Shonen+Spirit+Tee",
       "type": "premade",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_4gM28resL2SE3dEgtG6EU02"
     },
     {
       "id": "premade-4",
@@ -38,7 +38,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Midnight+Mecha+Crew",
       "type": "premade",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_dRm14nesL50M29Aa5i6EU03"
     },
     {
       "id": "premade-5",
@@ -48,7 +48,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Petal+Storm+LS",
       "type": "premade",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_00weVdfwPeBmbKaely6EU04"
     }
   ],
   "custom": [
@@ -60,7 +60,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Tee",
       "type": "custom",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_9B6bJ11FZgJu6pQ2CQ6EU05"
     },
     {
       "id": "custom-2",
@@ -70,7 +70,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Hoodie",
       "type": "custom",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_eVq6oHgAT0Kwg0q6T66EU06"
     },
     {
       "id": "custom-3",
@@ -80,7 +80,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Crewneck",
       "type": "custom",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_28EcN5esLbpa4hIcdq6EU07"
     },
     {
       "id": "custom-4",
@@ -90,7 +90,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Long+Sleeve",
       "type": "custom",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_aFacN5gATgJu5lMgtG6EU08"
     },
     {
       "id": "custom-5",
@@ -100,7 +100,7 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Zip+Hoodie",
       "type": "custom",
-      "stripeLink": ""
+      "stripeLink": "https://buy.stripe.com/test_7sYeVddoH1OAdSib9m6EU09"
     }
   ]
 }

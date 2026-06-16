@@ -1,5 +1,13 @@
 # Stripe Setup — Cason's Printz
 
+> ✅ **Status:** Test-mode Payment Links for all 10 products have already been
+> created (in the "clothing shop sandbox" Stripe account) and wired into
+> `products.json`. The 5 custom items include the required **Design details**
+> field, and all collect a US shipping address. You can test checkout right now
+> with the test card below. **The only thing left for real sales is "Going
+> live" (Part 4).** The rest of this guide explains how it all works and how to
+> add/redo links yourself.
+
 This site has **no backend**. Payments run through **Stripe Payment Links** —
 one link per product. You create the links in your Stripe dashboard (free) and
 paste each URL into `products.json`. That's the whole integration.
