@@ -161,17 +161,56 @@
     }
   }
 
-  /* ---- Placeholder checkout (replaced by Stripe Payment Links in Stage 5) ---- */
+  /* ---- Checkout: send the customer to this product's Stripe Payment Link ----
+     - Size is passed as client_reference_id (id_size) so the owner sees it in
+       the Stripe dashboard. (Stripe restricts this value to letters, numbers,
+       "-" and "_", so free text can't go here.)
+     - For custom orders the free-text design can't ride in the URL, so we copy
+       it to the clipboard and tell the customer to paste it into the
+       "Design details" custom field on the Stripe checkout page. See
+       STRIPE_SETUP.md for how to add that field to each custom Payment Link.
+  */
   function handleCheckout(p, size, prompt) {
-    var lines = [
-      "Order captured (checkout wiring comes in Stage 5):",
-      "",
-      "Item: " + p.name,
-      "Size: " + size,
-      "Price: " + p.price,
-    ];
-    if (p.type === "custom") lines.push("Design: " + prompt);
-    window.alert(lines.join("\n"));
+    var link = p.stripeLink;
+    var ctaNote = productViewContent.querySelector("#cta-note");
+
+    if (!link) {
+      if (ctaNote) {
+        ctaNote.textContent =
+          "Checkout isn't connected for this item yet. (Owner: add a Stripe " +
+          "Payment Link to products.json — see STRIPE_SETUP.md.)";
+      }
+      return;
+    }
+
+    // Dashboard-visible reference: which item + size.
+    var ref = (p.id + "_" + size).replace(/[^A-Za-z0-9_-]/g, "");
+    var url = link + (link.indexOf("?") > -1 ? "&" : "?") +
+      "client_reference_id=" + encodeURIComponent(ref);
+
+    function go() {
+      window.location.href = url;
+    }
+
+    if (p.type === "custom" && prompt) {
+      var notice =
+        "Your design notes were copied — paste them into the " +
+        '"Design details" box on the secure checkout page. Redirecting…';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(prompt).then(
+          function () {
+            if (ctaNote) ctaNote.textContent = notice;
+            setTimeout(go, 1200);
+          },
+          function () {
+            // Clipboard blocked — fall back to redirect; field stays manual.
+            go();
+          }
+        );
+        return;
+      }
+    }
+    go();
   }
 
   /* ==========================================================================
