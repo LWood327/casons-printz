@@ -6,7 +6,7 @@
       "price": "$32",
       "description": "Heavyweight cotton tee with a falling cherry-blossom graphic. Soft hand-feel print, boxy modern fit.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Sakura+Drip+Tee",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Sakura+Drip+Tee",
       "type": "premade",
       "stripeLink": ""
     },
@@ -16,7 +16,7 @@
       "price": "$58",
       "description": "Midweight fleece hoodie with a neon skyline print. Cozy lined hood and kangaroo pocket.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Neon+Tokyo+Hoodie",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Neon+Tokyo+Hoodie",
       "type": "premade",
       "stripeLink": ""
     },
@@ -26,7 +26,7 @@
       "price": "$30",
       "description": "Bold action-pose graphic tee inspired by classic shonen energy. Ringspun cotton, true to size.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Shonen+Spirit+Tee",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Shonen+Spirit+Tee",
       "type": "premade",
       "stripeLink": ""
     },
@@ -36,7 +36,7 @@
       "price": "$52",
       "description": "Premium crewneck sweatshirt with a tonal mecha line-art print. Brushed interior for warmth.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Midnight+Mecha+Crew",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Midnight+Mecha+Crew",
       "type": "premade",
       "stripeLink": ""
     },
@@ -46,7 +46,7 @@
       "price": "$38",
       "description": "Long sleeve tee with wrap-around petal graphics down the arms. Lightweight and breathable.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Petal+Storm+LS",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Petal+Storm+LS",
       "type": "premade",
       "stripeLink": ""
     }
@@ -58,7 +58,7 @@
       "price": "$28",
       "description": "Blank heavyweight cotton tee. Tell us exactly what you want printed and we'll bring your design to life.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Custom+Tee",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Tee",
       "type": "custom",
       "stripeLink": ""
     },
@@ -68,7 +68,7 @@
       "price": "$50",
       "description": "Blank midweight pullover hoodie. Describe your dream anime design and we'll print it for you.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Custom+Hoodie",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Hoodie",
       "type": "custom",
       "stripeLink": ""
     },
@@ -78,7 +78,7 @@
       "price": "$44",
       "description": "Blank premium crewneck. Send us your concept, characters, or art direction and we'll handle the rest.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Custom+Crewneck",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Crewneck",
       "type": "custom",
       "stripeLink": ""
     },
@@ -88,7 +88,7 @@
       "price": "$34",
       "description": "Blank long sleeve tee with room for sleeve prints. Describe your full design including sleeves.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Custom+Long+Sleeve",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Long+Sleeve",
       "type": "custom",
       "stripeLink": ""
     },
@@ -98,7 +98,7 @@
       "price": "$56",
       "description": "Blank full-zip hoodie. Perfect for front, back, and sleeve designs — tell us what you envision.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
-      "image": "https://placehold.co/600x800/000000/FF6EB4?text=Custom+Zip+Hoodie",
+      "image": "https://placehold.co/600x800/1b1b20/ff6eb4?text=Custom+Zip+Hoodie",
       "type": "custom",
       "stripeLink": ""
     }

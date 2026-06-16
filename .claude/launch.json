@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "casons-printz",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8765", "."],
+      "port": 8765
+    }
+  ]
+}
