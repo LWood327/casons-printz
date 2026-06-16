@@ -251,6 +251,56 @@
   /* ==========================================================================
      Load + init
      ========================================================================== */
+
+  /* ---- Editable site text (content/site.json, managed via /admin) ---- */
+  function setText(id, val) {
+    var el = document.getElementById(id);
+    if (el && val != null && val !== "") el.textContent = val;
+  }
+
+  function setSocial(linkId, itemId, url) {
+    var link = document.getElementById(linkId);
+    var item = document.getElementById(itemId);
+    if (!link) return;
+    if (url) {
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      if (item) item.hidden = false;
+    } else if (item) {
+      item.hidden = true; // hide empty social links rather than show dead "#"
+    }
+  }
+
+  function loadSiteContent() {
+    return fetch("content/site.json", { cache: "no-store" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (s) {
+        setText("hero-tagline", s.heroTagline);
+        setText("premade-intro", s.premadeIntro);
+        setText("custom-intro", s.customIntro);
+        var email = document.getElementById("contact-email");
+        if (email && s.contactEmail) {
+          email.textContent = s.contactEmail;
+          email.href = "mailto:" + s.contactEmail;
+        }
+        setSocial("social-instagram", "social-instagram-item", s.instagramUrl);
+        setSocial("social-tiktok", "social-tiktok-item", s.tiktokUrl);
+        setSocial("social-twitter", "social-twitter-item", s.twitterUrl);
+        // Hide the whole "Follow" column if there are no social links yet
+        var followCol = document.getElementById("follow-col");
+        if (followCol) {
+          followCol.hidden = !(s.instagramUrl || s.tiktokUrl || s.twitterUrl);
+        }
+      })
+      .catch(function (err) {
+        console.warn("content/site.json not loaded; using built-in text.", err);
+      });
+  }
+
   function loadProducts() {
     return fetch("products.json", { cache: "no-store" })
       .then(function (res) {
@@ -283,5 +333,6 @@
 
   collectBrowseEls();
   window.addEventListener("hashchange", route);
+  loadSiteContent();
   loadProducts();
 })();

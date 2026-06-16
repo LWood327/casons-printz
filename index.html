@@ -36,7 +36,7 @@
         <source srcset="images/logo.webp" type="image/webp" />
         <img src="images/logo.png" alt="Cason's Printz — Anime Inspired Apparel" class="hero-logo" width="460" height="460" />
       </picture>
-      <p class="tagline">Where anime meets the everyday. Bold prints, clean fits, and one-of-a-kind designs made just for you.</p>
+      <p class="tagline" id="hero-tagline">Where anime meets the everyday. Bold prints, clean fits, and one-of-a-kind designs made just for you.</p>
       <div class="hero-cta">
         <a href="#premade" class="btn btn-primary">Shop Premade</a>
         <a href="#custom" class="btn btn-ghost">Start a Custom</a>
@@ -49,7 +49,7 @@
     <section id="premade" class="section">
       <div class="container">
         <h2 class="section-title">Premade Items</h2>
-        <p class="section-intro">Ready-to-order pieces with anime-inspired prints already applied. Pick your size and check out.</p>
+        <p class="section-intro" id="premade-intro">Ready-to-order pieces with anime-inspired prints already applied. Pick your size and check out.</p>
         <!-- Product grid injected by js/main.js -->
         <div id="premade-grid" class="product-grid"></div>
       </div>
@@ -59,7 +59,7 @@
     <section id="custom" class="section">
       <div class="container">
         <h2 class="section-title">Custom Works</h2>
-        <p class="section-intro">Blank pieces, your vision. Choose an item, describe the design you want, and we'll print it.</p>
+        <p class="section-intro" id="custom-intro">Blank pieces, your vision. Choose an item, describe the design you want, and we'll print it.</p>
         <!-- Product grid injected by js/main.js -->
         <div id="custom-grid" class="product-grid"></div>
       </div>
@@ -88,13 +88,13 @@
         </ul>
       </div>
 
-      <div class="footer__col">
+      <div class="footer__col" id="follow-col">
         <h3 class="footer__heading">Follow</h3>
         <!-- Placeholder social links — swap the href="#" for real URLs -->
         <ul class="footer__links footer__social">
-          <li><a href="#" aria-label="Instagram (coming soon)">Instagram</a></li>
-          <li><a href="#" aria-label="TikTok (coming soon)">TikTok</a></li>
-          <li><a href="#" aria-label="X / Twitter (coming soon)">X / Twitter</a></li>
+          <li id="social-instagram-item"><a href="#" id="social-instagram" aria-label="Instagram">Instagram</a></li>
+          <li id="social-tiktok-item"><a href="#" id="social-tiktok" aria-label="TikTok">TikTok</a></li>
+          <li id="social-twitter-item"><a href="#" id="social-twitter" aria-label="X / Twitter">X / Twitter</a></li>
         </ul>
       </div>
 
@@ -102,7 +102,7 @@
         <h3 class="footer__heading">Contact</h3>
         <!-- Placeholder contact — swap for a real email -->
         <ul class="footer__links">
-          <li><a href="mailto:hello@casonsprintz.com">hello@casonsprintz.com</a></li>
+          <li><a href="mailto:hello@casonsprintz.com" id="contact-email">hello@casonsprintz.com</a></li>
         </ul>
       </div>
     </div>
@@ -111,6 +111,20 @@
       <p>&copy; <span id="year"></span> Cason's Printz. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Netlify Identity: powers login for the /admin content editor -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 
   <script src="js/main.js"></script>
 </body>

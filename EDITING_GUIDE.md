@@ -1,5 +1,17 @@
 # Editing Guide — Cason's Printz
 
+## 👉 Easiest way: the Admin Panel (recommended)
+
+Once the site is on Netlify, you get a private editor at **`/admin`** where you
+change text, product names, descriptions, prices, photos (drag & drop), and
+social links — all in simple forms, then click **Publish**. No code, no JSON.
+**See `CMS_SETUP.md` for the one-time setup and how to use it.**
+
+The rest of this guide explains the underlying `products.json` file — useful as
+a backup method or if you ever prefer editing the file directly.
+
+---
+
 Hi! This guide explains how to run your shop **without touching any code.**
 Almost everything lives in one file: **`products.json`**. If you can edit a
 form, you can edit this site.

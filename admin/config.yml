@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded product photos are stored / referenced from
+media_folder: "images/products"
+public_folder: "/images/products"
+
+# Editor UI tweaks
+site_url: https://casonsprintz.netlify.app
+display_url: https://casonsprintz.netlify.app
+logo_url: https://casonsprintz.netlify.app/images/logo.png
+
+collections:
+  # ----------------------------------------------------------------------
+  # 1) Site text — the words on the homepage + footer
+  # ----------------------------------------------------------------------
+  - name: "site"
+    label: "Site Text & Links"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "homepage"
+        label: "Homepage & Footer"
+        file: "content/site.json"
+        fields:
+          - { label: "Hero tagline", name: "heroTagline", widget: "text" }
+          - { label: "Premade section intro", name: "premadeIntro", widget: "text" }
+          - { label: "Custom section intro", name: "customIntro", widget: "text" }
+          - { label: "Contact email", name: "contactEmail", widget: "string" }
+          - { label: "Instagram URL", name: "instagramUrl", widget: "string", required: false, hint: "Full link, e.g. https://instagram.com/yourname. Leave blank to hide." }
+          - { label: "TikTok URL", name: "tiktokUrl", widget: "string", required: false, hint: "Leave blank to hide." }
+          - { label: "X / Twitter URL", name: "twitterUrl", widget: "string", required: false, hint: "Leave blank to hide." }
+
+  # ----------------------------------------------------------------------
+  # 2) Products — names, descriptions, photos, prices
+  # ----------------------------------------------------------------------
+  - name: "products"
+    label: "Products"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "catalog"
+        label: "Product Catalog"
+        file: "products.json"
+        fields:
+          - label: "Premade items"
+            name: "premade"
+            widget: "list"
+            label_singular: "premade item"
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Internal tag — leave this alone." }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price (display)", name: "price", widget: "string", hint: "⚠️ This only changes the price shown on the site. Ask your developer to update Stripe so customers are charged the new amount." }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Sizes", name: "sizes", widget: "list", default: ["S", "M", "L", "XL", "XXL"] }
+              - { label: "Photo", name: "image", widget: "image", hint: "Drag & drop a photo. Tall (3:4) images look best." }
+              - { label: "Type", name: "type", widget: "hidden", default: "premade" }
+              - { label: "Stripe link", name: "stripeLink", widget: "string", required: false, hint: "Set by your developer — leave as is." }
+          - label: "Custom items"
+            name: "custom"
+            widget: "list"
+            label_singular: "custom item"
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Internal tag — leave this alone." }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price (display)", name: "price", widget: "string", hint: "⚠️ This only changes the price shown on the site. Ask your developer to update Stripe so customers are charged the new amount." }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Sizes", name: "sizes", widget: "list", default: ["S", "M", "L", "XL", "XXL"] }
+              - { label: "Photo", name: "image", widget: "image", hint: "Drag & drop a photo. Tall (3:4) images look best." }
+              - { label: "Type", name: "type", widget: "hidden", default: "custom" }
+              - { label: "Stripe link", name: "stripeLink", widget: "string", required: false, hint: "Set by your developer — leave as is." }
