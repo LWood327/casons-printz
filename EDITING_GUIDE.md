@@ -104,6 +104,16 @@ to the exact line.
 
 ---
 
+## Replacing the logo
+
+The logo shows in the top-left and as the big hero image. It lives in two files
+in the `images/` folder: **`logo.png`** and **`logo.webp`**. To change it,
+replace both with your new artwork using the same filenames. A logo on a
+**black background** works best (the site blends the black away so only the
+artwork shows). Keep it roughly square.
+
+---
+
 ## Changing the social & contact links
 
 These are in `index.html` (the footer). Search for `footer__social` and

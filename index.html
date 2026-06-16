@@ -9,7 +9,7 @@
   <!-- Google Fonts (Space Grotesk for headings, Inter for body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -17,7 +17,12 @@
   <!-- ===================== HERO / HEADER ===================== -->
   <header id="top" class="hero">
     <nav class="nav">
-      <a href="#top" class="brand">Cason's Printz</a>
+      <a href="#top" class="brand" aria-label="Cason's Printz — home">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp" />
+          <img src="images/logo.png" alt="Cason's Printz" class="brand-logo" width="44" height="44" />
+        </picture>
+      </a>
       <ul class="nav-links">
         <li><a href="#premade">Premade</a></li>
         <li><a href="#custom">Custom</a></li>
@@ -26,8 +31,12 @@
     </nav>
 
     <div class="hero-content">
-      <h1>Cason's <span class="accent">Printz</span></h1>
-      <p class="tagline">Anime-inspired custom apparel. Bold prints, clean fits, and one-of-a-kind designs made just for you.</p>
+      <h1 class="visually-hidden">Cason's Printz — Anime Inspired Apparel</h1>
+      <picture>
+        <source srcset="images/logo.webp" type="image/webp" />
+        <img src="images/logo.png" alt="Cason's Printz — Anime Inspired Apparel" class="hero-logo" width="460" height="460" />
+      </picture>
+      <p class="tagline">Where anime meets the everyday. Bold prints, clean fits, and one-of-a-kind designs made just for you.</p>
       <div class="hero-cta">
         <a href="#premade" class="btn btn-primary">Shop Premade</a>
         <a href="#custom" class="btn btn-ghost">Start a Custom</a>

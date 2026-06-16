@@ -15,12 +15,16 @@
   --color-accent-deep: #d64f93; /* pressed / deeper pink */
   --color-border: #26262b;      /* subtle dividers / card borders */
 
-  /* --- Typography --- */
-  --font-heading: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  /* --- Typography ---
+     Fraunces = warm, boutique display serif (headings, names, prices).
+     Inter    = clean body + small UI labels. */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-display); /* alias kept for existing rules */
   --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-ui: "Inter", "Segoe UI", system-ui, sans-serif;
   --weight-body: 400;
   --weight-medium: 500;
-  --weight-bold: 700;
+  --weight-bold: 600;
 
   /* --- Spacing / layout --- */
   --max-width: 1200px;
@@ -58,10 +62,24 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+/* Screen-reader-only (keeps an <h1> for SEO behind the logo image) */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 a {
@@ -89,11 +107,12 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-heading);
-  font-weight: var(--weight-medium);
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-  padding: 0.85rem 1.6rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.8rem;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
@@ -162,6 +181,23 @@ img {
   color: var(--color-accent);
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.brand-logo {
+  height: 46px;
+  width: auto;
+  mix-blend-mode: screen; /* drops the logo's black bg into the page black */
+  transition: transform var(--transition);
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.05);
+}
+
 .nav-links {
   display: flex;
   gap: 1.75rem;
@@ -218,23 +254,25 @@ img {
 .hero-content {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 7rem 1.5rem 8rem;
+  padding: 4.5rem 1.5rem 6.5rem;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: clamp(3rem, 9vw, 6.5rem);
-  margin-bottom: 1rem;
-}
-
-.hero h1 .accent {
-  color: var(--color-accent);
+.hero-logo {
+  width: min(440px, 80vw);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  mix-blend-mode: screen; /* drops the logo's black bg into the page black */
 }
 
 .tagline {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: var(--weight-medium);
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
   color: var(--color-text-muted);
-  max-width: 620px;
+  max-width: 600px;
   margin: 0 auto 2.5rem;
 }
 
@@ -269,6 +307,9 @@ img {
 }
 
 .section-intro {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
   max-width: 600px;
   margin-bottom: 2.5rem;
@@ -318,6 +359,8 @@ img {
 }
 
 .product-card__price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   color: var(--color-accent-soft);
   font-weight: var(--weight-medium);
 }
@@ -391,10 +434,13 @@ img {
 
 .field__label {
   display: block;
-  font-family: var(--font-heading);
-  font-weight: var(--weight-medium);
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.7rem;
 }
 
 .field__hint {
@@ -413,8 +459,9 @@ img {
 .size-btn {
   min-width: 3rem;
   padding: 0.6rem 0.9rem;
-  font-family: var(--font-heading);
-  font-weight: var(--weight-medium);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--color-text);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -492,9 +539,10 @@ img {
 }
 
 .footer__heading {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text);
   margin-bottom: 0.9rem;
